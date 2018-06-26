@@ -3,9 +3,7 @@ MAINTAINER Sudeep Kumar Reddy Balineni<sbalinen@ftdi.com>
 
 RUN yum -y update
 
-#RUN yum install -y java
-COPY /usr/java/jdk1.8.0_66 /usr/java/jdk1.8.0_66/
-COPY /usr/local/apache-maven-3.5.3 /usr/local/apache-maven-3.5.3/
+RUN yum install -y java maven
 
 RUN ln -s /usr/java/jdk1.8.0_66/bin/java /usr/bin/java
 RUN ln -s /usr/local/apache-maven-3.5.3/bin/mvn /usr/bin/mvn
