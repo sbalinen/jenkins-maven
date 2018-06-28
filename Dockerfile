@@ -11,6 +11,7 @@ RUN yum install -y java maven docker-client
 
 #RUN chmod -R 755 /usr/java/jdk1.8.0_66/
 
-ADD  /var/lib/docker/volumes/*/_data/workspace/JenkinsSlavesAsDockerContainers/jenkins/scripts/deliver.sh /root/
+ADD  jenkins/scripts/deliver.sh /root/
+ADD  target/my-app-1.0-SNAPSHOT.jar /root/
 
 CMD ["/root/deliver.sh"]
