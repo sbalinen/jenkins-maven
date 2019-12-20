@@ -10,7 +10,7 @@ stage('Checkout'){
 stage('Build EC2 Instance if required') {
    echo env.GIT_PREVIOUS_COMMIT
    echo env.GIT_COMMIT
-     terraform_file_changed = bat (script: "git diff --stat ${env.GIT_PREVIOUS_COMMIT} ${env.GIT_COMMIT} |find /C "Jenkinsfile"', returnStdout: true).trim()    
+     terraform_file_changed = bat (script: "git diff --stat ${env.GIT_PREVIOUS_COMMIT} ${env.GIT_COMMIT} |find /C "Jenkinsfile"', returnStdout: true)
     if (${terraform_file_changed} == "1") {
         echo "Changes to terraform file. Running this stage"
       }       
