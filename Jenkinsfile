@@ -1,11 +1,13 @@
 node {
 
 stage('Checkout'){
-     final scmVars = checkout(scm)
-     echo "${scmVars.GIT_PREVIOUS_COMMIT} ${scmVars.GIT_COMMIT}"
+     scmVars = checkout(scm)
+     env.GIT_COMMIT = scmVars.GIT_COMMIT
+     env.GIT_PREVIOUS_COMMIT = scmVars.GIT_PREVIOUS_COMMIT
+     
 }
       
 stage('Build EC2 Instance if required') {
-     //echo "${scmVars.GIT_PREVIOUS_COMMIT} ${scmVars.GIT_COMMIT}"
+     echo "${env.GIT_PREVIOUS_COMMIT} ${env.GIT_COMMIT}"
     }       
 }
