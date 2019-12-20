@@ -8,7 +8,7 @@ stage('Checkout'){
 }
       
 stage('Build EC2 Instance if required') {
-   terraform_file_changed = bat (script: 'git diff --stat ${env.GIT_PREVIOUS_COMMIT} ${env.GIT_COMMIT} |find /C "terraform.tf"', returnStdout: true).trim()
+   terraform_file_changed = bat (script: 'git diff --stat ${env.GIT_PREVIOUS_COMMIT} ${env.GIT_COMMIT} |find /C "Jenkinsfile"', returnStdout: true).trim()
    if (${terraform_file_changed} == "1") {
       }       
 
