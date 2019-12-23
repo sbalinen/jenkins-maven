@@ -1,5 +1,5 @@
 node {
-
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10'))])
 stage('Checkout'){
      scmVars = checkout(scm)
      env.GIT_COMMIT = scmVars.GIT_COMMIT
