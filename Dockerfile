@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER Sudeep Kumar Reddy Balineni<sbalinen@ftdi.com>
+MAINTAINER Sudeep Kumar Reddy Balineni<sbalineni@teleflora.com>
 
 RUN yum -y update
 
