@@ -12,7 +12,7 @@ stage('Build EC2 Instance if required') {
     if (terraform_file_changed.contains("Jenkinsfile")) {
         echo "Running Stage"
 	script {
- 		def tfHome = tool name: ‘Terraform’
+ 		def tfHome = tool name: ‘terraform’
  		env.PATH = “${tfHome}:${env.PATH}”
  	}
 	bat 'terraform init -input=false'
