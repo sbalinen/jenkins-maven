@@ -13,7 +13,8 @@ stage('Build EC2 Instance if required') {
         echo "Running Jenkinsfile"
 	//bat 'C:/Users/sbalineni/Downloads/terraform init -input=false'
         //bat 'C:/Users/sbalineni/Downloads/terraform apply -input=false -auto-approve'    	    
-      }       
+      }      
+	
    else {
      echo "No changes to terraform file. Skipping this stage"
     }  
