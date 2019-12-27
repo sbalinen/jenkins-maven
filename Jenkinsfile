@@ -10,7 +10,7 @@ stage('Checkout'){
 stage('Build EC2 Instance if required') {
      terraform_file_changed = sh (script: "git diff --name-only ${env.GIT_PREVIOUS_COMMIT} ${env.GIT_COMMIT}", returnStdout: true).trim()
     if (terraform_file_changed.contains("Jenkinsfile")) {
-        echo "Running Stage"
+        echo "Running Jenkinsfile"
 	//bat 'C:/Users/sbalineni/Downloads/terraform init -input=false'
         //bat 'C:/Users/sbalineni/Downloads/terraform apply -input=false -auto-approve'    	    
       }       
