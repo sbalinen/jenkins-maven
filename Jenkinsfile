@@ -12,7 +12,8 @@ stage('Build EC2 Instance if required') {
     if (terraform_file_changed.contains("Jenkinsfile")) {
         echo "Running Jenkinsfile"
 	//bat 'C:/Users/sbalineni/Downloads/terraform init -input=false'
-        //bat 'C:/Users/sbalineni/Downloads/terraform apply -input=false -auto-approve'    	    
+        
+	//bat 'C:/Users/sbalineni/Downloads/terraform apply -input=false -auto-approve'    	    
       }       
    else {
      echo "No changes to terraform file. Skipping this stage"
